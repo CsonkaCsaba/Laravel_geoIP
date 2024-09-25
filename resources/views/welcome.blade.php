@@ -13,7 +13,7 @@
         <!-- Styles -->
     </head>
     <body>
-        @if($state !== 'California')
+        @if( $state !== 'California')
         Welcome
         @else
         404 error

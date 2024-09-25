@@ -16,5 +16,8 @@ use \Torann\GeoIP\Facades\GeoIP;
 */
 
 Route::get('/', function () {
-    return view('welcome', ['state'=>[IPController::class,'index']]);
+    $geoIPInfo = geoip()->getLocation($_SERVER['REMOTE_ADDR']);
+    $state = $geoIPInfo->state_name;
+    return view('welcome', ["state"=>$state]);
 });
+
